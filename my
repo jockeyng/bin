@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $1 in
+
+	hidden)
+		defaults write com.apple.finder AppleShowAllFiles TRUE	
+		;;
+	unhidden)
+		defaults write com.apple.finder AppleShowAllFiles FALSE	
+		;;
+
+esac
