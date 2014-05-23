@@ -8,5 +8,16 @@ case $1 in
 	unhidden)
 		defaults write com.apple.finder AppleShowAllFiles FALSE	
 		;;
-
+	gitkweb)
+		cd /Users/jockeyng/Dropbox/Softpub/src/emptyWeb
+		gitk
+		;;
+	scp)
+		scp $2 $3@192.168.0.$4:/home/$3
+		;;
+	ssh)
+		ssh $2@192.168.0.$3
+		;;
+	*)
+		echo "Usage: ..."
 esac
