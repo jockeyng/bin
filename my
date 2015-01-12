@@ -12,8 +12,24 @@ case $1 in
 		cd /Users/jockeyng/Dropbox/Softpub/src/emptyWeb
 		gitk
 		;;
+	git-log)
+		git log --graph --oneline --date-order --decorate --color --all
+		;;
 	scp)
 		scp $2 $3@192.168.0.$4:/home/$3
+		;;
+	path)
+		##	osx version (not work)
+		sed -i "" -e "s/^export.*/PATH=\/home\/jockeyng\/bin:$PATH\nexport.*/g" ~/.bash_profile
+		;;
+	vguest)
+		##	CentOS
+		sudo yum install gcc kernel-devel kernel-headers dkms make bzip2 perl
+		sudo yum update kernel*
+		reboot
+		;;
+	find)
+		find / -name "*$2*"
 		;;
 	ssh)
 		ssh $2@192.168.0.$3
